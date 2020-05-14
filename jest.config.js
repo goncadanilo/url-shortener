@@ -1,6 +1,6 @@
 module.exports = {
   clearMocks: true,
-  collectCoverageFrom: ['src/**/*.ts', '!src/server.ts', '!src/config/*'],
+  collectCoverageFrom: ['src/**/*.ts', '!src/server.ts', '!src/schemas/*'],
   coverageDirectory: 'coverage',
   testEnvironment: 'node',
   testMatch: ['**/*.spec.ts'],
