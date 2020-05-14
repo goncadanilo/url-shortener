@@ -5,7 +5,7 @@
   "author": "Danilo Gonçalves <gonca.danilo@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start:dev": "",
+    "start:dev": "nodemon src/server.ts",
     "test": "jest --passWithNoTests --silent --noStackTrace",
     "test:cov": "yarn test --coverage",
     "test:staged": "yarn test --findRelatedTests"
