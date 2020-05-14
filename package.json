@@ -36,7 +36,6 @@
     "lint-staged": "^10.2.2",
     "prettier": "^2.0.5",
     "ts-jest": "^25.5.1",
-    "ts-node-dev": "^1.0.0-pre.44",
     "typescript": "^3.9.2"
   }
 }
