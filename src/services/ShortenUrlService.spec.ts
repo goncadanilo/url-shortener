@@ -2,6 +2,7 @@ import faker from 'faker';
 
 import IUrlRepository from '../repositories/interfaces/IUrlRepository';
 import ShortenUrlService from './ShortenUrlService';
+import HttpError from '../errors/HttpError';
 
 class FakeUrlRepository implements IUrlRepository {
   public async create(): Promise<string> {
@@ -18,5 +19,19 @@ describe('Shorten Url Service', () => {
 
     expect(status).toBe(201);
     expect(newUrl).toHaveLength(6);
+  });
+
+  it('should returns 400 if an invalid url is provided', async () => {
+    const fakeUrlRepository = new FakeUrlRepository();
+    const shortenUrlService = new ShortenUrlService(fakeUrlRepository);
+    const url = 'any';
+
+    try {
+      await shortenUrlService.execute(url);
+    } catch (error) {
+      expect(error).toBeInstanceOf(HttpError);
+      expect(error.status).toBe(400);
+      expect(error.message).toBe('Invalid url!');
+    }
   });
 });
