@@ -5,8 +5,15 @@
     "allowJs": true,
     "outDir": "dist",
     "rootDir": "src",
+    "baseUrl": "src",
+    "paths": {
+      "@modules/*": ["modules/*"],
+      "@shared/*": ["shared/*"]
+    },
     "strict": true,
     "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "forceConsistentCasingInFileNames": true
   },
   "include": ["src"]

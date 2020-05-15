@@ -5,7 +5,7 @@
   "author": "Danilo Gonçalves <gonca.danilo@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start:dev": "",
+    "start:dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpileOnly --ignore-watch node_modules src/shared/infra/http/server.ts",
     "test": "jest --passWithNoTests --silent --noStackTrace",
     "test:cov": "yarn test --coverage",
     "test:staged": "yarn test --findRelatedTests"
@@ -40,6 +40,7 @@
     "lint-staged": "^10.2.2",
     "prettier": "^2.0.5",
     "ts-jest": "^25.5.1",
+    "ts-node-dev": "^1.0.0-pre.44",
     "typescript": "^3.9.2"
   }
 }
