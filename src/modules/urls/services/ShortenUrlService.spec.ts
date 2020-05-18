@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import faker from 'faker';
 
 import HttpError from '@shared/errors/HttpError';
