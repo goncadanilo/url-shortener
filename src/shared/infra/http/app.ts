@@ -3,10 +3,13 @@ import 'dotenv/config';
 
 import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
+import 'express-async-errors';
 
 import HttpError from '@shared/errors/HttpError';
 import routes from './routes';
-import '../mongodb';
+
+import '@shared/infra/mongodb';
+import '@shared/containers';
 
 const app = express();
 
