@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-// import faker from 'faker';
+import faker from 'faker';
 
 import HttpError from '@shared/errors/HttpError';
 import FakeUrlRepository from '@modules/urls/repositories/fakes/FakeUrlRepository';
@@ -33,5 +33,18 @@ describe('Redirect to Url Service', () => {
       expect(error.status).toBe(404);
       expect(error.message).toBe('Url not found');
     }
+  });
+
+  it('should returns original url from the short url', async () => {
+    const {
+      redirectToUrlService,
+      fakeUrlRepository,
+    } = makeRedirectToUrlService();
+    const url = faker.internet.url();
+    const shortUrl = await fakeUrlRepository.create(url);
+    const response = await redirectToUrlService.execute(shortUrl);
+
+    expect(response.status).toBe(200);
+    expect(response.url).toBe(url);
   });
 });
