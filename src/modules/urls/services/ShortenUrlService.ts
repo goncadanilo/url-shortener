@@ -4,11 +4,6 @@ import HttpError from '@shared/errors/HttpError';
 import IUrlRepository from '@modules/urls/repositories/IUrlRepository';
 import IUrlValidation from '@modules/urls/providers/UrlValidation/models/IUrlValidation';
 
-interface IResponse {
-  status: number;
-  newUrl: string;
-}
-
 @injectable()
 class ShortenUrlService {
   constructor(
@@ -19,12 +14,12 @@ class ShortenUrlService {
     private readonly urlValidation: IUrlValidation,
   ) {}
 
-  public async execute(originalUrl: string): Promise<IResponse> {
+  public async execute(originalUrl: string): Promise<string> {
     if (!this.urlValidation.test(originalUrl))
       throw new HttpError('Invalid url');
 
     const newUrl = await this.urlRepository.create(originalUrl);
-    return { status: 201, newUrl };
+    return newUrl;
   }
 }
 

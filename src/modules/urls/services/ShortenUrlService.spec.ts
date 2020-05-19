@@ -32,9 +32,8 @@ describe('Shorten Url Service', () => {
   it('should be able to create a new url shortcut', async () => {
     const { shortenUrlService, fakeUrlRepository } = makeShortenUrlService();
     const url = faker.internet.url();
-    const { status, newUrl } = await shortenUrlService.execute(url);
+    const newUrl = await shortenUrlService.execute(url);
 
-    expect(status).toBe(201);
     expect(newUrl).toHaveLength(6);
     expect(await fakeUrlRepository.findByShortUrl(newUrl)).toBe(url);
   });

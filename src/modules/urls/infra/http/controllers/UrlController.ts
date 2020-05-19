@@ -13,9 +13,9 @@ class UrlController {
         .json({ status: 'error', message: 'Missing param: url' });
 
     const shortenUrlService = container.resolve(ShortenUrlService);
-    const { status, newUrl } = await shortenUrlService.execute(url);
+    const newUrl = await shortenUrlService.execute(url);
 
-    return response.status(status).json({ newUrl });
+    return response.status(201).json({ newUrl });
   }
 }
 
