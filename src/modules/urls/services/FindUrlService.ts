@@ -3,25 +3,20 @@ import { injectable, inject } from 'tsyringe';
 import HttpError from '@shared/errors/HttpError';
 import IUrlRepository from '@modules/urls/repositories/IUrlRepository';
 
-interface IResponse {
-  status: number;
-  url: string;
-}
-
 @injectable()
-class RedirectToUrl {
+class FindUrlService {
   constructor(
     @inject('UrlRepository')
     private readonly urlRepository: IUrlRepository,
   ) {}
 
-  public async execute(shortUrl: string): Promise<IResponse> {
+  public async execute(shortUrl: string): Promise<string> {
     const url = await this.urlRepository.findByShortUrl(shortUrl);
 
     if (!url) throw new HttpError('Url not found', 404);
 
-    return { status: 200, url };
+    return url;
   }
 }
 
-export default RedirectToUrl;
+export default FindUrlService;
