@@ -5,6 +5,7 @@ module.exports = {
   clearMocks: true,
   collectCoverageFrom: [
     '<rootDir>/src/modules/**/*.ts',
+    '<rootDir>/src/test/fakes/**/*.ts',
     '!<rootDir>/src/modules/**/infra/**/*.ts',
   ],
   coverageDirectory: 'coverage',

@@ -1,4 +1,4 @@
-import IUrlValidation from '../models/IUrlValidation';
+import IUrlValidation from '@modules/urls/providers/UrlValidation/models/IUrlValidation';
 
 class FakeUrlValidation implements IUrlValidation {
   private response = true;

@@ -1,4 +1,4 @@
-import IUrlRepository from '../IUrlRepository';
+import IUrlRepository from '@modules/urls/repositories/IUrlRepository';
 
 interface IUrls {
   originalUrl: string;

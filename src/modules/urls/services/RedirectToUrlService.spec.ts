@@ -2,7 +2,7 @@ import 'reflect-metadata';
 import faker from 'faker';
 
 import HttpError from '@shared/errors/HttpError';
-import FakeUrlRepository from '@modules/urls/repositories/fakes/FakeUrlRepository';
+import FakeUrlRepository from '@test/fakes/repositories/FakeUrlRepository';
 import RedirectToUrlService from './RedirectToUrlService';
 
 interface IResponse {
