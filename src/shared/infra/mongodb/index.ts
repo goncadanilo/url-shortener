@@ -1,8 +1,13 @@
 import mongoose from 'mongoose';
 
+const uri =
+  process.env.NODE_ENV === 'test'
+    ? process.env.MONGO_TEST
+    : process.env.MONGO_URI;
+
 function createConnection(): void {
   mongoose
-    .connect(`${process.env.MONGO_URI}`, {
+    .connect(`${uri}`, {
       useNewUrlParser: true,
       useCreateIndex: true,
       useUnifiedTopology: true,
