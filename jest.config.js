@@ -4,16 +4,16 @@ const { compilerOptions } = require('./tsconfig.json');
 module.exports = {
   clearMocks: true,
   collectCoverageFrom: [
-    '<rootDir>/src/modules/**/*.ts',
-    '<rootDir>/src/test/fakes/**/*.ts',
-    '!<rootDir>/src/modules/**/infra/**/*.ts',
+    '<rootDir>/src/**/*.ts',
+    '!<rootDir>/src/test/integration/*.ts',
+    '!<rootDir>/src/shared/infra/http/server.ts',
   ],
   coverageDirectory: 'coverage',
   coverageReporters: ['text-summary', 'lcov'],
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
     prefix: '<rootDir>/src/',
   }),
-  preset: 'ts-jest',
+  preset: '@shelf/jest-mongodb',
   testEnvironment: 'node',
   testMatch: ['**/*.spec.ts'],
   transform: {
