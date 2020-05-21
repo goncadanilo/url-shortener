@@ -1,5 +1,4 @@
-import app from './app';
+import app from '@config/app';
+import { PORT } from '@shared/utils/env';
 
-app.listen(process.env.PORT, () =>
-  console.log(`App is running in port: ${process.env.PORT}`),
-);
+app.listen(PORT, () => console.log('Server is running'));
