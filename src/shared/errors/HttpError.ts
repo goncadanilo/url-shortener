@@ -1,14 +1,8 @@
-import {} from 'express';
-
 class HttpError {
-  public readonly message: string;
-
-  public readonly status: number;
-
-  constructor(message: string, status = 400) {
-    this.status = status;
-    this.message = message;
-  }
+  constructor(
+    public readonly message: string,
+    public readonly statusCode = 400,
+  ) {}
 }
 
 export default HttpError;
