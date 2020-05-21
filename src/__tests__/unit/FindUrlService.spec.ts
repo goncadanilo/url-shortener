@@ -2,8 +2,8 @@ import 'reflect-metadata';
 import faker from 'faker';
 
 import HttpError from '@shared/errors/HttpError';
-import FakeUrlRepository from '@test/fakes/repositories/FakeUrlRepository';
-import FindUrlService from './FindUrlService';
+import FindUrlService from '@modules/urls/services/FindUrlService';
+import FakeUrlRepository from '../fakes/repositories/FakeUrlRepository';
 
 interface IResponse {
   findUrlService: FindUrlService;
@@ -30,7 +30,7 @@ describe('Redirect to Url Service', () => {
       await findUrlService.execute(shortUrl);
     } catch (error) {
       expect(error).toBeInstanceOf(HttpError);
-      expect(error.status).toBe(404);
+      expect(error.statusCode).toBe(404);
       expect(error.message).toBe('Url not found');
     }
   });
