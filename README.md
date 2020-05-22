@@ -57,6 +57,12 @@ A url retornada deve ser salva no banco de dados e possuir um prazo de validade 
 
 Depois que o merge da sua pull request for feito, você pode deletar a sua branch.
 
+## :arrow_forward: Como rodar
+
+- No seu terminal, rode o comando para instalar as dependências do projeto: `yarn`;
+- 
+
+
 ## :memo: Licença
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
