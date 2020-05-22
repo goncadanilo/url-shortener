@@ -60,7 +60,8 @@ Depois que o merge da sua pull request for feito, você pode deletar a sua branc
 ## :arrow_forward: Como rodar
 
 - No seu terminal, rode o comando para instalar as dependências do projeto: `yarn`;
-- 
+- Crie uma cópia do arquivo **.env.example** com o nome **.env**, na raiz, e defina suas variáveis de ambiente;
+- Rode o comando para iniciar o servidor (em modo desenvolvimento): `yarn start:dev`;
 
 
 ## :memo: Licença
