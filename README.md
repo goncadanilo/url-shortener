@@ -63,6 +63,7 @@ Depois que o merge da sua pull request for feito, você pode deletar a sua branc
 - Crie uma cópia do arquivo **.env.example** com o nome **.env** (na raiz) e defina suas variáveis de ambiente;
 - Rode o comando para iniciar o servidor (em modo desenvolvimento): `yarn start:dev`;
 
+Se tudo ocorrer bem, a aplicação vai estar disponível em: **http://localhost:3333**.
 
 ## :memo: Licença
 
