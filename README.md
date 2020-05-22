@@ -26,7 +26,7 @@
 <br>
 
 <p align="center">
-  <img alt="URL Shortener" src=".github/url-shortener.png" width="80%">
+  <img alt="URL Shortener" src=".github/url-shortener.png" width="100%">
 </p>
 
 ## :rocket: Tecnologias
