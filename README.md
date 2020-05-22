@@ -35,7 +35,13 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
+Esse projeto é uma API REST desenvolvida, com [Node.js](https://nodejs.org/en/) e [Typescript](https://www.typescriptlang.org/), baseada em um [desafio de backend](https://github.com/backend-br/desafios/tree/master/1%20-%20Easy/Encurtador%20de%20URL) do [Backend-Br](https://github.com/backend-br). O intuito do desafio foi criar um serviço que inicialmente recebe como parâmetro uma URL que deverá ser encurtada seguindo as seguintes regras:
 
+1. Mínimo de 5 e máximo de 10 caracteres.
+
+2. Apenas letras e números.
+
+A url retornada deve ser salva no banco de dados e possuir um prazo de validade e ao receber uma url encurtada, deve fazer o redirecionamento para a url salva no banco. Nesse projeto usei o [MongoDB](https://docs.mongodb.com/) como banco de dados.
 
 ## 🤔 Como contribuir
 
