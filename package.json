@@ -5,7 +5,7 @@
   "author": "Danilo Gonçalves <gonca.danilo@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start:dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpileOnly --ignore-watch node_modules src/shared/infra/http/server.ts",
+    "start:dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpileOnly --ignore-watch node_modules src/server.ts",
     "pretest": "cross-env NODE_ENV=test",
     "test": "jest --passWithNoTests --silent --noStackTrace",
     "test:cov": "yarn test --coverage",

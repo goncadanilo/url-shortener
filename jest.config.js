@@ -5,9 +5,9 @@ module.exports = {
   clearMocks: true,
   collectCoverageFrom: [
     '<rootDir>/src/**/*.ts',
-    '!<rootDir>/src/config/*.ts',
+    '!<rootDir>/src/server.ts',
     '!<rootDir>/src/shared/errors/*.ts',
-    '!<rootDir>/src/shared/infra/http/server.ts',
+    '!<rootDir>/src/shared/infra/http/app.ts',
     '!<rootDir>/src/shared/utils/env.ts',
   ],
   coverageDirectory: 'coverage',
