@@ -7,6 +7,7 @@ import 'express-async-errors';
 
 import HttpError from '@shared/errors/HttpError';
 import routes from '@shared/infra/http/routes';
+import docsFolder from '@config/docs';
 
 import '@shared/infra/mongodb';
 import '@shared/containers';
@@ -15,6 +16,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use('/api/docs', express.static(docsFolder));
 app.use(routes);
 app.use(errors());
 
