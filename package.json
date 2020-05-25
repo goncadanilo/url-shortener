@@ -9,7 +9,8 @@
     "pretest": "cross-env NODE_ENV=test",
     "test": "jest --passWithNoTests --silent --noStackTrace",
     "test:cov": "yarn test --coverage",
-    "test:staged": "yarn test --findRelatedTests"
+    "test:staged": "yarn test --findRelatedTests",
+    "docs": "aglio -i docs/api.apib -o docs/index.html"
   },
   "dependencies": {
     "celebrate": "^12.1.1",
