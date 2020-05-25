@@ -1,0 +1,47 @@
+FORMAT: 1A
+HOST: http://localhost:3333
+
+# URL Shortener API
+
+Esse projeto é uma API REST que inicialmente recebe como parâmetro uma URL que é encurtada seguindo as seguintes regras:
+
+1. Mínimo de 5 e máximo de 10 caracteres.
+
+2. Apenas letras e números.
+
+A url retornada faz o redirecionamento para a url original.
+
+# Group URL
+
+## Encurtar url [POST /url]
+Cria e retorna uma url curta apartir da url fornecida.
+
++ Request  (application/json)
+
+  + Body
+
+            {
+              "url": "https://exemplo.com",
+            }
+
++ Response 201 (application/json)
+
+  + Body
+
+            {
+              "newUrl": "http://localhost:3333/abc123",
+            }
+
++ Response 400 (application/json)
+
+  + Body
+
+            {
+              "statusCode": 400,
+              "error": "Bad Request",
+              "message": "Invalid url",
+              "validation": {
+                "source": "body",
+                "keys": []
+              }
+            }
