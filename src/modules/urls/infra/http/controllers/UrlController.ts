@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { container } from 'tsyringe';
 
 import ShortenUrlService from '@modules/urls/services/ShortenUrlService';
-import FindUrlService from '@modules/urls/services/FindUrlService';
+import FindByShortenUrlService from '@modules/urls/services/FindByShortenUrlService';
 
 class UrlController {
   public async create(request: Request, response: Response): Promise<Response> {
@@ -17,8 +17,8 @@ class UrlController {
   public async getUrl(request: Request, response: Response): Promise<void> {
     const { shortUrl } = request.params;
 
-    const findUrlService = container.resolve(FindUrlService);
-    const url = await findUrlService.execute(shortUrl);
+    const findByShortenUrlService = container.resolve(FindByShortenUrlService);
+    const url = await findByShortenUrlService.execute(shortUrl);
 
     return response.status(301).redirect(url);
   }

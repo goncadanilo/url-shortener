@@ -21,12 +21,12 @@ const makeShortenUrlService = (): IResponse => {
 };
 
 describe('Shorten Url Service', () => {
-  it('should be able to create a new url shortcut', async () => {
+  it('should be able to create a new shorten url', async () => {
     const { shortenUrlService, fakeUrlRepository } = makeShortenUrlService();
     const url = faker.internet.url();
     const newUrl = await shortenUrlService.execute(url);
 
     expect(newUrl).toHaveLength(6);
-    expect(await fakeUrlRepository.findByShortUrl(newUrl)).toBe(url);
+    expect(await fakeUrlRepository.findByShortenUrl(newUrl)).toBe(url);
   });
 });

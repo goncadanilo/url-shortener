@@ -2,32 +2,34 @@ import 'reflect-metadata';
 import faker from 'faker';
 
 import HttpError from '@shared/errors/HttpError';
-import FindUrlService from '@modules/urls/services/FindUrlService';
+import FindByShortenUrlService from '@modules/urls/services/FindByShortenUrlService';
 import FakeUrlRepository from '../fakes/repositories/FakeUrlRepository';
 
 interface IResponse {
-  findUrlService: FindUrlService;
+  findByShortenUrlService: FindByShortenUrlService;
   fakeUrlRepository: FakeUrlRepository;
 }
 
-const makeFindUrlService = (): IResponse => {
+const makeFindByShortenUrlService = (): IResponse => {
   const fakeUrlRepository = new FakeUrlRepository();
 
-  const findUrlService = new FindUrlService(fakeUrlRepository);
+  const findByShortenUrlService = new FindByShortenUrlService(
+    fakeUrlRepository,
+  );
 
   return {
-    findUrlService,
+    findByShortenUrlService,
     fakeUrlRepository,
   };
 };
 
 describe('Redirect to Url Service', () => {
   it('should returns 404 if short url is not found', async () => {
-    const { findUrlService } = makeFindUrlService();
+    const { findByShortenUrlService } = makeFindByShortenUrlService();
     const shortUrl = 'any_shortUrl';
 
     try {
-      await findUrlService.execute(shortUrl);
+      await findByShortenUrlService.execute(shortUrl);
     } catch (error) {
       expect(error).toBeInstanceOf(HttpError);
       expect(error.statusCode).toBe(404);
@@ -36,10 +38,13 @@ describe('Redirect to Url Service', () => {
   });
 
   it('should returns original url from the short url', async () => {
-    const { findUrlService, fakeUrlRepository } = makeFindUrlService();
+    const {
+      findByShortenUrlService,
+      fakeUrlRepository,
+    } = makeFindByShortenUrlService();
     const url = faker.internet.url();
     const shortUrl = await fakeUrlRepository.create(url);
-    const response = await findUrlService.execute(shortUrl);
+    const response = await findByShortenUrlService.execute(shortUrl);
 
     expect(response).toBe(url);
   });

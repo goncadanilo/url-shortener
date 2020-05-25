@@ -14,7 +14,7 @@ class UrlRepository implements IUrlRepository {
     return BASE_URL + shortUrl;
   }
 
-  public async findByShortUrl(shortUrl: string): Promise<string | undefined> {
+  public async findByShortenUrl(shortUrl: string): Promise<string | undefined> {
     const findUrl = await UrlSchema.findOne({ shortUrl });
     const originalUrl = findUrl?.originalUrl;
     return originalUrl;

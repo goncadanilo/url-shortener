@@ -5,7 +5,7 @@ import mongoose from 'mongoose';
 import request from 'supertest';
 import faker from 'faker';
 
-import app from '@config/app';
+import app from '@shared/infra/http/app';
 
 describe('Url module', () => {
   let connection: MongoClient;
@@ -27,7 +27,7 @@ describe('Url module', () => {
     mongoose.disconnect();
   });
 
-  it('should be able create a new url shortcut', async () => {
+  it('should be able create a new shorten url', async () => {
     const url = faker.internet.url();
     const response = await request(app).post('/url').send({ url });
     const findUrl = await connection
@@ -56,7 +56,7 @@ describe('Url module', () => {
     expect(count).toBe(1);
   });
 
-  it('should not be able create a new url shortcut with invalid url', async () => {
+  it('should not be able create a new shorten url with invalid url', async () => {
     const response = await request(app).post('/url').send({ url: 'any_url' });
 
     expect(response.status).toBe(400);

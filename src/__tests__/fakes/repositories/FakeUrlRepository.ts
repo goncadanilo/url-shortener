@@ -14,7 +14,7 @@ class FakeUrlRepository implements IUrlRepository {
     return shortUrl;
   }
 
-  public async findByShortUrl(shortUrl: string): Promise<string | undefined> {
+  public async findByShortenUrl(shortUrl: string): Promise<string | undefined> {
     const findUrl = this.urls.find(url => url.shortUrl === shortUrl);
     const originalUrl = findUrl?.originalUrl;
     return originalUrl;
