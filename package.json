@@ -5,6 +5,8 @@
   "author": "Danilo Gonçalves <gonca.danilo@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "prebuild": "cross-env rm -r dist/",
+    "build": "tsc",
     "start:dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpileOnly --ignore-watch node_modules src/server.ts",
     "pretest": "cross-env NODE_ENV=test",
     "test": "jest --passWithNoTests --silent --noStackTrace",
