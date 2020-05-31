@@ -5,8 +5,9 @@
   "author": "Danilo Gonçalves <gonca.danilo@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "prebuild": "cross-env rm -r dist/",
-    "build": "tsc",
+    "prebuild": "cross-env rm -rf dist/",
+    "build": "tsc -p .",
+    "start": "node -r tsconfig-paths/register dist/server.js",
     "start:dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpileOnly --ignore-watch node_modules src/server.ts",
     "pretest": "cross-env NODE_ENV=test",
     "test": "jest --passWithNoTests --silent --noStackTrace",
@@ -20,6 +21,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
+    "module-alias": "^2.2.2",
     "mongoose": "^5.9.14",
     "reflect-metadata": "^0.1.13",
     "tsyringe": "^4.2.0"
