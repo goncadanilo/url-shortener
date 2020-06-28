@@ -17,7 +17,9 @@
 
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
   
-  <img alt="Author" src="https://img.shields.io/badge/author-Danilo%20Gon%C3%A7alves-blue">
+  <a href="https://github.com/goncadanilo/">
+    <img alt="Author" src="https://img.shields.io/badge/author-Danilo%20Gon%C3%A7alves-blue">
+  </a>
 </p>
 
 <p align="center">
