@@ -12,6 +12,8 @@
   <a href="https://github.com/goncadanilo/url-shortener/issues">
     <img alt="Repository issues" src="https://img.shields.io/github/issues/goncadanilo/url-shortener.svg">
   </a>
+  
+  <img alt="Coverage" src="https://img.shields.io/badge/coverage-100%25-brightgreen">
 
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
 </p>
