@@ -4,6 +4,8 @@
 
 <p align="center">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/goncadanilo/url-shortener.svg">
+  
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/top/goncadanilo/docker-api.svg">
 
   <a href="https://github.com/goncadanilo/url-shortener/commits/master">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/goncadanilo/url-shortener.svg">
